@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #00E0FF, #5F01F0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0 5px 10px rgb(4, 5, 89);
+    border-radius: 5px;
+}
+
+form .título {
+    color: #252525;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+form label {
+    margin-bottom: 35px;
+}
+
+form label .fa-solid {
+    font-size: 20px;
+    color: #160B86;
+    margin-right: 10px;
+}
+
+form label input {
+    outline: none;
+    border: none;
+    color:#252525;
+    border-bottom: solid 1px #5F01F0;
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+form label input::placeholder {
+    color: rgba(37, 37, 37, 0.5);
+}
+
+form .link {
+    color:#252525;
+    margin-bottom: 15px;
+}
+
+form #crear {
+    color:#252525;
+    margin-top: 20px;
+}
+
+form .boton {
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #00E0FF, #5F01F0);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
