@@ -75,3 +75,11 @@ form .boton {
     border-radius: 5px;
 }
 
+.formulario {
+    padding: 40px;
+    display: none;
+}
+
+.formulario:nth-child(1){
+    display: block;
+}
