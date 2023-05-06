@@ -72,7 +72,9 @@ form .boton {
     border-radius: 5px;
 }
 
-
+form .boton:hover {
+    background: linear-gradient(to right, #5F01F0, #160B86);
+}
 
 .formulario-register {
     
