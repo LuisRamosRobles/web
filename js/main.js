@@ -1,10 +1,19 @@
 $('.toggle').click(function(){
-    $('.formulario').animate({
+    $('.formulario-register').animate({
         height: "toggle",
         'padding-top': 'toggle',
         'padding-bottom': 'toggle',
         opacity: 'toggle'
-    });
+    }, "slow");
+}); 
+
+$('.toggle').click(function(){
+    $('.formulario-login').animate({
+        height: "toggle",
+        'padding-top': 'toggle',
+        'padding-bottom': 'toggle',
+        opacity: 'toggle'
+    }, "slow");
 }); 
 
 const username = document.getElementById('username')
