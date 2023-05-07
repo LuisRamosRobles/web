@@ -6,8 +6,11 @@
     $correo = $_POST['email'];
     $password = $_POST['password'];
 
+    //Encrptación de contraseña
+    $password_enc = hash('sha512', $password);
+
     $query = "INSERT INTO usuarios(usuario, correo, password)
-              VALUES('$usuario', '$correo', '$password')";
+              VALUES('$usuario', '$correo', '$password_enc')";
 
     // Verificación de que el correo introducido no se repita en la base de datos
     $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios 
