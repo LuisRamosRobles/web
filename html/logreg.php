@@ -12,7 +12,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <a href="../index.html"><img src="../images/logo.png" alt="Imagen Cinema Paradiso" id="logo1"></a>
         <div class="contenedor-form">
             <form method="post" action="../main.php" class="formulario-login">
                 
@@ -34,20 +33,20 @@
                 </div>
             </form>
     
-            <form method="post" action="../main.php" class="formulario-register">
+            <form method="post" action="../php/registro_user.php" class="formulario-register">
                 
                 <h1 class="título">Registrarse</h1>
                 <label>
                     <i class="fa-solid fa-user-ninja"></i>
-                    <input placeholder="Usuario" type="text" id="username" required>
+                    <input placeholder="Usuario" type="text" id="username" name="username" required>
                 </label>
                 <label>
                     <i class="fa-solid fa-envelope"></i>
-                    <input placeholder="Correo Electrónico" type="email" id="email">
+                    <input placeholder="Correo Electrónico" type="email" id="email" name="email">
                 </label>
                 <label>
                     <i class="fa-solid fa-lock"></i>
-                    <input placeholder="Contraseña" type="password" id="password" required>
+                    <input placeholder="Contraseña" type="password" id="password" name="password" required>
                 </label>
         
                 <!--<button id="button">Registrar</button>-->

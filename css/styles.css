@@ -47,12 +47,14 @@ form label .fa-solid {
 form label input {
     outline: none;
     border: none;
-    color:#1e1e1e;
+    color: white;
     border-bottom: solid 1px #cd7f32;
     padding: 0 5px;
     font-size: 18px;
     background-color: #000000;
 }
+
+
 
 form label input::placeholder {
     color: rgb(107, 107, 107);
