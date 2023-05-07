@@ -85,3 +85,31 @@ form .boton:hover {
     display: block;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo {
+    width: 175px;
+    height: 125px;
+    margin: 10px;
+}
