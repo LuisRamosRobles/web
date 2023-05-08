@@ -20,11 +20,11 @@
         echo'
             <script>
                 alert("Este correo ya está registrado, usa otro correo por favor.");
-                window.location = "../html/logreg.php"
+                window.location = "../html/logreg.html"
             </script>
         ';
 
-        exit();
+        exit;
     }
 
     // Verificación de que el usuario introducido no se repita en la base de datos
@@ -35,11 +35,11 @@
         echo'
             <script>
                 alert("Este nombre de usuario ya está cogida, elige otro nombre por favor.");
-                window.location = "../html/logreg.php"
+                window.location = "../html/logreg.html"
             </script>
         ';
 
-        exit();
+        exit;
     }
 
 
@@ -56,7 +56,7 @@
         echo'
             <script>
                 alert("Inténtalo de nuevo, usuario no alamacenado");
-                window.location = "../html/logreg.php"
+                window.location = "../html/logreg.html"
             </script>        
         ';
     }
