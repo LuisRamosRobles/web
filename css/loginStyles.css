@@ -15,7 +15,6 @@ body {
     background-size: cover;
 }
 
-
 form {
     opacity: 0.98;
     display: flex;
@@ -54,8 +53,6 @@ form label input {
     background-color: #000000;
 }
 
-
-
 form label input::placeholder {
     color: rgb(107, 107, 107);
 }
@@ -67,6 +64,7 @@ form .link {
 
 .toggle span{
     color: #ffffff;
+    cursor: pointer;
 }
 
 form .boton {
@@ -85,61 +83,9 @@ form .boton:hover {
 }
 
 .formulario-register {
-    
     display: none;
 }
 
 .contenedor-form .formulario:nth-child(1){
     display: block;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#logo {
-    width: 175px;
-    height: 125px;
-    margin: 10px;
-}
-
-hr{
-    border-color: #efb810;
-    border-width: 2px;
-    border-style: solid;
-    width: 100% !important;
-    margin-bottom: 500px;
-}
-
-#logo1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 175px;
-    height: 125px;
-    margin: 10px;
 }

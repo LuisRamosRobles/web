@@ -1,6 +1,7 @@
 <?php 
 
-    $conexion = mysqli_connect("localhost", "root", "", "login_register_db");
+    //El parametro "cine" hace referencia a la BBDD, deberiais cambiar el nombre en la BBDD
+    $conexion = mysqli_connect("localhost", "root", "", "cine");
 
     /*
     if($conexion){
@@ -9,8 +10,5 @@
         echo 'No se ha podido conectar a la Base de Datos';
     }
     */
-
-    
-
 
 ?>
