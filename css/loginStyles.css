@@ -89,3 +89,13 @@ form .boton:hover {
 .contenedor-form .formulario:nth-child(1){
     display: block;
 }
+
+#logo {
+    width: 175px;
+    height: 125px;
+    margin: 10px;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

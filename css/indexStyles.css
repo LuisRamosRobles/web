@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('../images/fondo.jpg');
+    background-image: url('../images/fondoInicio.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -43,15 +43,6 @@ nav a {
 }
 
 #logo {
-    width: 175px;
-    height: 125px;
-    margin: 10px;
-}
-
-#logo1 {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 175px;
     height: 125px;
     margin: 10px;
