@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/contactStyles.css">
+</head>
+<body>
+    <a href="../index.html"><img src="../images/logo.png" alt="Imagen Cinema Paradiso" id="logo"></a>
+    <form method="POST" action="https://formsubmit.co/lrrzafiro6@gmail.com" enctype="multipart/form-data">
+
+        <h2>Contacto</h2>
+
+        <div class="input-group">
+
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" placeholder="Nombre">
+
+            <label for="phone">Teléfono</label>
+            <input type="tel" name="phone" id="phone" placeholder="Teléfono">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
+
+            <label for="file">Seleccione el archivo que quiera subir</label>
+            <input type="file" name="attachment">
+
+            <div class="form-txt">
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos y condiciones</a>
+            </div>
+
+            <input class="btn" type="submit" value="Enviar">
+
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_captcha" value="false">
+        </div>
+
+    </form>
+
+</body>
+</html>

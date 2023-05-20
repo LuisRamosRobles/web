@@ -38,8 +38,12 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #ab6928;
     text-decoration: none;
+}
+
+nav a:hover{
+    color: #cc9d03;
 }
 
 #logo {
