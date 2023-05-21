@@ -95,8 +95,35 @@ form .boton:hover {
     width: 175px;
     height: 125px;
     margin: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ab6928;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #cc9d03;
 }

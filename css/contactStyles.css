@@ -5,25 +5,41 @@
     font-family: sans-serif;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background-image: url('../images/fondoContact.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
+    filter: blur(5px); /* Ajusta el valor según el grado de desenfoque deseado */
+  }
+  
 form{
     padding: 50px 55px;     
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgb(87, 53, 5);
     border-radius: 5px;
     text-align: center;
-    width: 340px;
+    width: 100%;
+    max-width: 550px;
     background-color: #1e1e1e;
-    box-shadow: 0 5px 10px rgb(87, 53, 5);
+    margin-top: 130px;
+    overflow-y: auto;
+    max-height: 600px;
 }
 
 .input-group{
@@ -33,12 +49,12 @@ form{
 }
 
 h2{
-    color: #283629;
+    color: white;
     font-size: 35px;
 }
 
 label{
-    color: #283629;
+    color: white;
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -46,16 +62,17 @@ label{
 
 input, textarea{
     padding: 17px 25px;
-    border-radius: 25px;
+    border-radius: 15px;
     margin-bottom: 20px;
-    background-color: #EDFFF0;
-    border: 2px solid #F0FAF1;
-    color: #283629;
+    background-color: #000000;
+    border: 2px solid #ab6928;
+    color: rgb(107, 107, 107);
     outline: none;
+
 }
 
 input::placeholder, textarea::placeholder{
-    color: #B5CAB6;
+    color: rgb(107, 107, 107);
 }
 
 .form-txt{
@@ -66,7 +83,7 @@ input::placeholder, textarea::placeholder{
 }
 
 .form-txt a{
-    color: #76B28E;
+    color: #ab6928;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -77,13 +94,12 @@ input::placeholder, textarea::placeholder{
     color: #FFFFFF;
     border: 0;
     border-radius: 25px;
-    background-color: #51D94C;
-    box-shadow: 0 0 20px rgba(25, 254, 0, 0.4);
+    background: #ab6928;
     cursor: pointer;
 }
 
 .btn:hover{
-    background-color: #50E04B;
+    background: #cc9d03;
 }
 
 @media(max-width: 991px){
@@ -101,12 +117,40 @@ input::placeholder, textarea::placeholder{
     }
 }
 
-#logo {
-    width: 175px;
-    height: 125px;
-    margin: 10px;
+header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ab6928;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #cc9d03;
+}
+
+#logo {
+    width: 175px;
+    height: 125px;
+    margin: 10px;
+}
+  
