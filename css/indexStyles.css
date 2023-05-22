@@ -27,6 +27,7 @@ header {
     margin: 0;
     padding: 0;
     background-color: black;
+    height: 115px;
 }
 
 nav ul {
@@ -51,6 +52,7 @@ nav a:hover{
     width: 175px;
     height: 125px;
     margin: 10px;
+    margin-bottom: 0%;
 }
 
 #goToFilmList {
