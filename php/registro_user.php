@@ -48,8 +48,7 @@
     if($ejecutar){
         echo'
             <script>
-                alert("Usuario almacenado exitosamente");
-                window.location = "../index.html"
+                window.location = "../html/logcorrecto.html"
             </script>        
         ';
     } else {
