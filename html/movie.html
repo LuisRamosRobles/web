@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/movieStyles.css">
+    <link rel="icon" href="../images/minilogo.ico" type="image/x-icon">
+    <title>Pelicula</title>
+</head>
+<body>
+  <header>
+    <a href="./index.html"><img src="../images/logo.png" alt="Imagen Cinema Paradiso" id="logo"></a>
+	</header>
+  <div id="errorBox" class="error-box">
+    <div class="loader"></div>
+    <p>La pelicula no está disponible.</p>
+    <a href="../index.html">Inicio</a>
+  </div>
+  <div id="movieDetails" class="container">
+      <div class="poster">
+        <img id="posterImage" src="" alt="Movie Poster">
+      </div>
+      <div class="details">
+        <h2 id="movieTitle"></h2>
+        <p id="movieOverview"></p>
+        <p id="movieRuntime"></p>
+        <p id="movieReleaseDate"></p>
+        <p id="movieRating"></p>
+        <p id="movieAuthor"></p>
+        <button id="btnVer">Ver</button>
+      </div>
+  </div>
+  <script src="../js/movie.js"></script>
+</body>
+</html>
