@@ -6,6 +6,7 @@
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,7 +25,14 @@ header {
     margin: 0;
     padding: 0;
     background-color: black;
-    height: 115px;
+    height: 80px;
+}
+
+#logo {
+    max-width: 120px;
+    max-height: 80px;
+    margin: 10px;
+    margin-bottom: 0%;
 }
 
 nav ul {
@@ -45,11 +53,19 @@ nav a:hover{
     color: #cc9d03;
 }
 
-#logo {
-    width: 175px;
-    height: 125px;
-    margin: 10px;
-    margin-bottom: 0%;
+html::-webkit-scrollbar{
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track{
+    border-radius: 8px;
+    background-color: #cc9d03;
+    border: 1px solid black; 
+}
+
+html::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #ab6928;
 }
 
 #searchContainer {
@@ -78,8 +94,8 @@ nav a:hover{
     border: 2px solid transparent;
     border-radius: 8px;
     outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
+    background-color: #0d0c22;
+    color: #f3f3f4;
     transition: .3s ease;
 }
    
@@ -89,8 +105,8 @@ nav a:hover{
    
 .input:focus, input:hover {
     outline: none;
-    border-color: rgba(234,76,137,0.4);
-    background-color: #fff;
+    border-color: #ab6928;
+    background-color: #0d0c22;
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
    

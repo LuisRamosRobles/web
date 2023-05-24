@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +26,43 @@ header {
   margin: 0;
   padding: 0;
   background-color: black;
-  height: 115px;
+  height: 80px;
 }
 
 #logo {
-  width: 175px;
-  height: 125px;
-  margin: 25px;
+  max-width: 120px;
+  max-height: 80px;
+  margin: 10px;
   margin-bottom: 0%;
+}
+
+#logo-caja{
+  margin-left: -200px;
+}
+
+#volver{
+  margin-left: 45px;
+  color: #ab6928;
+  text-decoration: none;
+}
+
+#volver:hover{
+  color: #cc9d03;
+}
+
+html::-webkit-scrollbar{
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track{
+  border-radius: 8px;
+  background-color: #cc9d03;
+  border: 1px solid black; 
+}
+
+html::-webkit-scrollbar-thumb{
+  border-radius: 8px;
+  background-color: #ab6928;
 }
   
 .container {
@@ -79,14 +109,18 @@ header {
     cursor: pointer;
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color:#ab6928;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
+    width: 100%; 
+    transition-duration: .3s; 
   }
   
   #btnVer:hover {
-    background-color: #0056b3;
+    background-color: #cc9d03;
+    box-shadow: 10px 10px #ab6928;
+    transform: translate(2px, 0);
   }
 
   .error-box {

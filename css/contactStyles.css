@@ -27,7 +27,61 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(5px); /* Ajusta el valor según el grado de desenfoque deseado */
-  }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 80px;
+}
+
+#logo {
+    max-width: 120px;
+    max-height: 80px;
+    margin: 10px;
+    margin-bottom: 0%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ab6928;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #cc9d03;
+}
+
+html::-webkit-scrollbar{
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track{
+    border-radius: 8px;
+    background-color: #cc9d03;
+    border: 1px solid black; 
+}
+
+html::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #ab6928;
+}
   
 form{
     padding: 50px 55px;     
@@ -37,9 +91,10 @@ form{
     width: 100%;
     max-width: 550px;
     background-color: #1e1e1e;
-    margin-top: 100px;
+    margin-top: 150px;
     overflow-y: auto;
     max-height: 620px;
+    border-radius: 5px;
 }
 
 .input-group{
@@ -51,6 +106,8 @@ form{
 h2{
     color: white;
     font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
 label{
@@ -62,11 +119,11 @@ label{
 
 input, textarea{
     padding: 17px 25px;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-bottom: 20px;
     background-color: #000000;
     border: 2px solid #ab6928;
-    color: rgb(107, 107, 107);
+    color: white;
     outline: none;
 
 }
@@ -89,17 +146,35 @@ input::placeholder, textarea::placeholder{
     text-decoration: none;
 }
 
+form::-webkit-scrollbar{
+    width: 10px;
+}
+
+form::-webkit-scrollbar-track{
+    border-radius: 8px;
+    background-color: #cc9d03;
+    border: 1px solid black;
+}
+
+form::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #ab6928;
+}
+
 .btn{
-    font-size: 16px;
+    font-size: 20px;
     color: #FFFFFF;
     border: 0;
-    border-radius: 25px;
+    border-radius: 5px;
     background: #ab6928;
     cursor: pointer;
+    transition-duration: .3s; 
 }
 
 .btn:hover{
-    background: #cc9d03;
+    background-color: #cc9d03;
+    box-shadow: 10px 10px #ab6928;
+    transform: translate(2px, 0);
 }
 
 @media(max-width: 991px){
@@ -116,43 +191,3 @@ input::placeholder, textarea::placeholder{
         padding: 15px;
     }
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    height: 115px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    color: #ab6928;
-    text-decoration: none;
-}
-
-nav a:hover{
-    color: #cc9d03;
-}
-
-#logo {
-    width: 175px;
-    height: 125px;
-    margin: 10px;
-    margin-bottom: 0%;
-}
-  
