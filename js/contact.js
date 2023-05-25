@@ -7,9 +7,6 @@ function validarNombre(input) {
         input.setCustomValidity('');
     }
 }
-
-
-
     function validarTlfn(input) {
     // Remueve todos los caracteres que no sean números
     input.value = input.value.replace(/\D/g, '');
@@ -21,4 +18,3 @@ function validarNombre(input) {
         input.setCustomValidity('');
     }
 }
-
