@@ -123,6 +123,12 @@ html::-webkit-scrollbar-thumb{
     transform: translate(2px, 0);
   }
 
+  #errorTrailer{
+    visibility: hidden;
+    margin-top: 3%;
+    color: red;
+  }
+
   .error-box {
     display: none;
     text-align: center;

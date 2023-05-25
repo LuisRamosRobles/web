@@ -1,6 +1,7 @@
 // Obtener el ID de la película de la URL (suponiendo que se pasa como parámetro)
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
+const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
 
 // Obtener la referencia a los elementos HTML
 const errorBox = document.getElementById('errorBox');
@@ -21,7 +22,6 @@ if (!movieId) {
   errorBox.style.display = 'block';
 } else {
   // URL de la API de TMDB para obtener los detalles de una película específica
-  const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
   const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es&with_original_language=en`;
   const creditsUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=es`;
 
@@ -53,4 +53,33 @@ if (!movieId) {
     .catch(error => {
       console.error('Error al obtener los detalles de la película:', error);
     });
+}
+
+function buscarTrailer(){
+
+  let mensajeError = document.getElementById('errorTrailer');
+
+  fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es&append_to_response=videos`)
+    .then(response => response.json())
+    .then(data => {
+      const videos = data.videos.results;
+
+      if (videos.length > 0) {
+        const trailer = videos.find(video => video.site === 'YouTube' && video.type === 'Trailer');
+
+        if (trailer) {
+          mensajeError.style.visibility = 'hidden';
+          window.open(`https://www.youtube.com/watch?v=${trailer.key}`);
+        } else {
+          mensajeError.style.visibility = 'visible';
+        }
+      } else {
+        mensajeError.style.visibility = 'visible';
+      }
+    })
+    .catch(error => {
+      mensajeError.style.visibility = 'visible';
+      console.error(error);
+    });
+
 }
