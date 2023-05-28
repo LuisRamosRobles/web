@@ -10,6 +10,11 @@
     AND password = '$password_enc'");
 
     if(mysqli_num_rows($validar_login) > 0){
+        $row = mysqli_fetch_assoc($validar_login);
+        $usuario = $row['usuario'];
+        session_start();
+        $_SESSION['logeado'] = true;
+        $_SESSION['usuario'] = $usuario;
         header("location: ../index.html");
         exit;
     }else{

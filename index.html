@@ -10,13 +10,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./images/minilogo.ico" type="image/x-icon">
 </head>
-<body onload="cargarPeliculas()">
+<body onload="comprobarSesion(), cargarPeliculas()">
     <header>
       <a href="./index.html"><img src="images/logo.png" alt="Imagen Cinema Paradiso" id="logo"></a>
       <nav>
         <ul>
-          <li><a href="./index.html">Página Principal</a></li>
-          <li><a href="./html/logreg.html">Inicio de Sesión</a></li>
+          <li id="username"><a id="textUsername" href="#"></a></li>
+          <li id="login"><a href="./html/logreg.html">Iniciar sesión</a></li>
+          <li id="logout"><a href="">Cerrar sesión</a></li>
           <li><a href="./html/contact.html">Contacta con Nosotros</a></li>
         </ul>
       </nav> 

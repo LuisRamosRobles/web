@@ -1,4 +1,4 @@
-const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5'; // Reemplaza 'tu_api_key' con tu propia clave de API
+const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
 const maxMovies = 70; // Número máximo de películas que deseas obtener
 const moviesPerPage = 20; // Número de películas por página (20 es el valor máximo permitido por la API)
 
@@ -86,7 +86,6 @@ function busquedaPeliculas(inputBusqueda){
         let movies = data.results;
         allMovies = [...allMovies, ...movies];
   
-        // Si se han obtenido menos películas que el número máximo deseado, ajusta el número total de páginas
         if (movies.length < moviesPerPage) {
           totalPages = Math.ceil(allMovies.length / moviesPerPage);
         }
@@ -95,7 +94,6 @@ function busquedaPeliculas(inputBusqueda){
       return allMovies.slice(0, maxMovies);
     };
   
-  // Función para crear los elementos HTML de las películas
     let createMovieElements = (movies) => {
       let movieList = document.getElementById('movieList');
   
@@ -114,17 +112,16 @@ function busquedaPeliculas(inputBusqueda){
         title.textContent = movie.title;
   
         let link = document.createElement('a');
-        link.href = `./html/movie.html?id=${movie.id}`; // Agregar el ID de la película como parámetro en la URL
+        link.href = `./html/movie.html?id=${movie.id}`;
   
         overlay.appendChild(title);
         movieDiv.appendChild(image);
         movieDiv.appendChild(overlay);
-        link.appendChild(movieDiv); // Envolver el div de la película con el enlace
+        link.appendChild(movieDiv);
         movieList.appendChild(link);
       });
     };
   
-    // Obtener y mostrar las películas
     fetchMovies()
       .then(movies => createMovieElements(movies))
       .catch(error => console.log(error));
@@ -140,5 +137,57 @@ function busquedaPeliculas(inputBusqueda){
 
     cargarPeliculas()
   }
+
+}
+
+function comprobarSesion(){
+
+  let login = document.getElementById("login");
+  let logout = document.getElementById("logout");
+  let username = document.getElementById("username");
+  let textUsername = document.getElementById("textUsername");
+
+  logout.addEventListener("click", function() {
+    let xhr1 = new XMLHttpRequest();
+    xhr1.open("POST", "./php/cerrarSesion.php", true);
+    xhr1.onreadystatechange = function() {
+      if (xhr1.readyState === 4 && xhr1.status === 200) {
+        window.location.reload()
+      }
+    };
+    xhr1.send();
+  });
+
+  let xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "./php/comprobarSesion.php", true);
+  xhr2.onreadystatechange = function() {
+    if (xhr2.readyState === 4 && xhr2.status === 200) {
+        let response = xhr2.responseText.trim();
+        if (response === "true") {
+            login.style.display = "none";
+            logout.style.display = "block";
+        } else {
+            login.style.display = "block";
+            logout.style.display = "none";
+        }
+    }
+  };
+  xhr2.send();
+
+  let xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "./php/comprobarUsuario.php", true);
+  xhr3.onreadystatechange = function() {
+    if (xhr3.readyState === 4 && xhr3.status === 200) {
+        let response = xhr3.responseText.trim();
+        if (response != "false") {
+            username.style.display = "block";
+            textUsername.textContent = "Usuario: " + response;
+        } else {
+          username.style.display = "none";
+          textUsername.textContent = "";
+        }
+    }
+  };
+  xhr3.send();
 
 }

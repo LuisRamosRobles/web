@@ -55,6 +55,24 @@ if (!movieId) {
     });
 }
 
+function comprobarSesion(){
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "../php/comprobarSesion.php", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        let response = xhr.responseText.trim();
+        if (response === "true") {
+          buscarTrailer();
+        } else {
+          window.location.href = "../html/logreg.html"
+        }
+    }
+  };
+  xhr.send();
+
+}
+
 function buscarTrailer(){
 
   let mensajeError = document.getElementById('errorTrailer');

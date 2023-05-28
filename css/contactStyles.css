@@ -68,6 +68,14 @@ nav a:hover{
     color: #cc9d03;
 }
 
+#logout{
+    display: none;
+}
+
+#username{
+    display: none;
+}
+
 html::-webkit-scrollbar{
     width: 10px;
 }
