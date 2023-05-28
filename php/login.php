@@ -18,14 +18,7 @@
         header("location: ../index.html");
         exit;
     }else{
-        echo'
-            <script>
-                alert("El usuario introducido no existe, por favor compruebe 
-                que los datos sean correctos o registrese");
-                window.location = "../html/logreg.html";
-            </script>
-        ';
-
+        header("location: ../html/errorLogin.html");
         exit;
     }
 
