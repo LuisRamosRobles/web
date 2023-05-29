@@ -19,8 +19,7 @@
     if(mysqli_num_rows($verificar_correo) > 0){
         echo'
             <script>
-                alert("Este correo ya está registrado, usa otro correo por favor.");
-                window.location = "../html/logreg.html"
+                window.location = "../html/errorRegistro.html?error=correo"
             </script>
         ';
 
@@ -34,8 +33,7 @@
     if(mysqli_num_rows($verificar_usuario) > 0){
         echo'
             <script>
-                alert("Este nombre de usuario ya está cogida, elige otro nombre por favor.");
-                window.location = "../html/logreg.html"
+                window.location = "../html/errorRegistro.html?error=usuario"
             </script>
         ';
 
@@ -54,8 +52,7 @@
     } else {
         echo'
             <script>
-                alert("Inténtalo de nuevo, usuario no alamacenado");
-                window.location = "../html/logreg.html"
+                window.location = "../html/errorRegistro.html?error=comun"
             </script>        
         ';
     }
