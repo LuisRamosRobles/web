@@ -2,30 +2,28 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Esta página web se utiliza unicamente para registro de nuevos usuarios e inicio de sesión">
+        <meta name="description" content="en esta página web se encuentra la página principal con la cartelera de la película">
         <meta name="keywords" content="peliculas, largometrajes, web, pagina web peliculas">
         <meta name="author" content="Luis Ramos y Alejandro Arroba" />
-        <title>Página Login</title>
-        <link rel="stylesheet" href="../css/errorAdminStyles.css">
+        <title>Cine Paradise</title>
+        <link rel="stylesheet" href="../css/userListStyles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="icon" href="../images/minilogo.ico" type="image/x-icon">
     </head>
-    <body>
+    <body onload="comprobarAdmin(), cargarListado()">
         <header>
             <a href="../index.html"><img src="../images/logo.png" alt="Imagen Cinema Paradiso" id="logo"></a>
+            <nav>
+            <ul>
+                <li><a href="../index.html">Página principal</a></li>
+            </ul>
+            </nav> 
         </header>
-        <div id="infoLogin">
-            <p>Nombre de usuario o contraseña incorrectos. Vuelva a intentarlo.</p>
-            <a href="../html/logreg.html">Inicio de Sesión</a>
-            <div class="loader">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
-        </div>
-        <script src="../js/jquery-3.1.1.min.js"></script>
+        <h2 id="titulo">Listado de Usuarios:</h2>
+        <div id="user-list" class="user-list">
+        </div>      
+        <script src="../js/userListScripts.js"></script>
     </body>
 </html>

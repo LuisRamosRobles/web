@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('../images/fondo.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+  #logo {
+      max-width: 120px;
+      max-height: 80px;
+      margin: 10px;
+      margin-bottom: 0%;
+  }
+  
+  header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      height: 80px;
+  }
+  
+  #infoLogin{
+      margin-top: 5%;
+      height: 40%;
+      width: 30%;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: rgba(31, 49, 66, 0.6);
+  }
+  
+  #infoLogin p{
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+  }
+  
+  #infoLogin a{
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+  }
+  
+  #infoLogin a:hover{
+      color: #ab6928;
+  }
+  
+  .loader {
+    position: relative;
+  }
+  
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+    opacity: 0;
+    animation: pulse_4923 4s infinite linear;
+    border: 0.5px solid #f3f3f3;
+    box-shadow: 0px 0px 5px #eef0e5;
+  }
+  
+  .circle:nth-child(1) {
+    animation-delay: .2s;
+  }
+  
+  .circle:nth-child(2) {
+    animation-delay: .4s;
+  }
+  
+  .circle:nth-child(3) {
+    animation-delay: .8s;
+  }
+  
+  .circle:nth-child(4) {
+    animation-delay: 1s;
+  }
+  
+  @keyframes pulse_4923 {
+    0% {
+      opacity: 0.0;
+      width: 0px;
+      height: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  
+    10% {
+      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(2);
+    }
+  
+    100% {
+      opacity: 0.0;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }

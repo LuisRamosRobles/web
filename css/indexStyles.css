@@ -61,6 +61,10 @@ nav a:hover{
     display: none;
 }
 
+#userList{
+    display: none;
+}
+
 html::-webkit-scrollbar{
     width: 10px;
 }

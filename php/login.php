@@ -12,9 +12,11 @@
     if(mysqli_num_rows($validar_login) > 0){
         $row = mysqli_fetch_assoc($validar_login);
         $usuario = $row['usuario'];
+        $admin = $row['admin'];
         session_start();
         $_SESSION['logeado'] = true;
         $_SESSION['usuario'] = $usuario;
+        $_SESSION['admin'] = $admin;
         header("location: ../index.html");
         exit;
     }else{
@@ -22,5 +24,6 @@
         exit;
     }
 
+    mysqli_close($conexion)
 
 ?>

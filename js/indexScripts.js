@@ -66,7 +66,6 @@ function busquedaPeliculas(inputBusqueda){
   let busqueda = inputBusqueda.value
 
   if(busqueda != ""){
-    let loader = document.getElementById('loader');
     let moviesContainer = document.getElementById('movieList');
     let movies = moviesContainer.getElementsByClassName('movie');
     let links = moviesContainer.getElementsByTagName('a');
@@ -146,6 +145,7 @@ function comprobarSesion(){
   let logout = document.getElementById("logout");
   let username = document.getElementById("username");
   let textUsername = document.getElementById("textUsername");
+  let userList = document.getElementById("userList");
 
   logout.addEventListener("click", function() {
     let xhr1 = new XMLHttpRequest();
@@ -189,5 +189,19 @@ function comprobarSesion(){
     }
   };
   xhr3.send();
+
+  let xhr4 = new XMLHttpRequest();
+  xhr4.open("POST", "./php/comprobarAdmin.php", true);
+  xhr4.onreadystatechange = function() {
+    if (xhr4.readyState === 4 && xhr4.status === 200) {
+        let response = xhr4.responseText.trim();
+        if (response == 1) {
+          userList.style.display = "block";
+        } else {
+          userList.style.display = "none";
+        }
+    }
+  };
+  xhr4.send();
 
 }
