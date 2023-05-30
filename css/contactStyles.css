@@ -99,9 +99,9 @@ form{
     width: 100%;
     max-width: 550px;
     background-color: #1e1e1e;
-    margin-top: 150px;
+    margin-top: 80px;
     overflow-y: auto;
-    max-height: 620px;
+    max-height: 630px;
     border-radius: 5px;
 }
 
