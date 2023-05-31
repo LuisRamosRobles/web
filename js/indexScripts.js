@@ -2,9 +2,6 @@ const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
 const maxMovies = 70; // Número máximo de películas que deseas obtener
 const moviesPerPage = 20; // Número de películas por página (20 es el valor máximo permitido por la API)
 
-// Obtén la fecha actual en el formato "YYYY-MM-DD"
-const currentDate = new Date().toISOString().split('T')[0];
-
 function cargarPeliculas(){
   // Realizar una petición GET a la API de TMDb para obtener todas las películas populares y estrenadas en español
   let fetchMovies = async () => {
@@ -12,7 +9,7 @@ function cargarPeliculas(){
     let totalPages = Math.ceil(maxMovies / moviesPerPage);
 
     for (let page = 1; page <= totalPages; page++) {
-      let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&sort_by=popularity.desc&primary_release_date.lte=${currentDate}&page=${page}&language=es&with_original_language=en`);
+      let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&sort_by=popularity.desc&page=${page}&language=es&with_original_language=en`);
       let data = await response.json();
       let movies = data.results;
       allMovies = [...allMovies, ...movies];
@@ -80,7 +77,7 @@ function busquedaPeliculas(inputBusqueda){
       let totalPages = Math.ceil(maxMovies / moviesPerPage);
   
       for (let page = 1; page <= totalPages; page++) {
-        let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${busqueda}&include_adult=false&sort_by=popularity.desc&primary_release_date.lte=${currentDate}&page=${page}&language=es&with_original_language=en`);
+        let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${busqueda}&include_adult=false&sort_by=popularity.desc&page=${page}&language=es&with_original_language=en`);
         let data = await response.json();
         let movies = data.results;
         allMovies = [...allMovies, ...movies];
