@@ -75,6 +75,12 @@ html::-webkit-scrollbar-thumb{
     color: white;
 }
 
+#addAdmin{
+  width: 80%;
+  margin-top: 1%;
+  color: white
+}
+
 .user-list {
     display: flex;
     flex-direction: column;
@@ -133,4 +139,4 @@ html::-webkit-scrollbar-thumb{
   
   .delete-button:hover {
     background-color: #e60000;
-  }  
+  }

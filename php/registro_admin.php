@@ -10,7 +10,7 @@
     $password_enc = hash('sha512', $password);
 
     $query = "INSERT INTO usuarios(usuario, admin, correo, password)
-              VALUES('$usuario', '0', '$correo', '$password_enc')";
+              VALUES('$usuario', '1', '$correo', '$password_enc')";
 
     // Verificación de que el correo introducido no se repita en la base de datos
     $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios 
