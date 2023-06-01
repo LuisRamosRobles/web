@@ -13,10 +13,12 @@
         $row = mysqli_fetch_assoc($validar_login);
         $usuario = $row['usuario'];
         $admin = $row['admin'];
+        $id = $row['id'];
         session_start();
         $_SESSION['logeado'] = true;
         $_SESSION['usuario'] = $usuario;
         $_SESSION['admin'] = $admin;
+        $_SESSION['id'] = $id;
         header("location: ../index.html");
         exit;
     }else{

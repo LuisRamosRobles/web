@@ -86,11 +86,11 @@ function cargarListado(){
         function deleteUser(userId) {
         // Realizar una solicitud al archivo PHP para eliminar el usuario de la base de datos
         fetch('../php/eliminarUsuario.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ id: userId })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: userId })
         })
         .then(response => response.json())
         .then(data => {

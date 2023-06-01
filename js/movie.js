@@ -1,4 +1,4 @@
-// Obtener el ID de la película de la URL (suponiendo que se pasa como parámetro)
+// Obtener el ID de la película de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
@@ -64,8 +64,9 @@ function comprobarSesion(){
         let response = xhr.responseText.trim();
         if (response === "true") {
           buscarTrailer();
+          registrarVisto();
         } else {
-          window.location.href = "../html/logreg.html"
+          window.location.href = "../html/logreg.html";
         }
     }
   };
@@ -99,5 +100,19 @@ function buscarTrailer(){
       mensajeError.style.visibility = 'visible';
       console.error(error);
     });
+
+}
+
+function registrarVisto(){
+
+  console.log(movieId)
+
+  fetch('../php/registroVisto.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ movieId: movieId })
+  });
 
 }
