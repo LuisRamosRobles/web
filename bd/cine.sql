@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2023 a las 11:01:05
+-- Tiempo de generación: 01-06-2023 a las 11:58:12
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,12 +42,45 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `admin`, `usuario`, `correo`, `password`) VALUES
 (5, 0, 'usuario1', 'gshdgsdhsd@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
 (6, 0, 'dwd', 'dwd@hmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
-(7, 1, 'adrian', 'adrian@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
+(7, 1, 'alex', 'alex@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
 (8, 0, 'pedro', 'pedro@porro.es', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
-(9, 0, 'a', 'a@a', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
-(10, 0, 'b', 'b@b', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
-(11, 0, 'c', 'c@c', '5b232efb8b3e89ba2cfb880aa2b7a74c89b7935910f47d88dd733860ffea7f690a05386a24c7c5bd7fd15c96f4909d68e43f9685f4b1375725221880f53b74e6'),
-(12, 0, 'adrian2', 'adrian2@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79');
+(13, 0, 'lucas', 'lucas@gmail.com', 'e16d6b316f3bef1794c548b7a98b969a6aacb02f6ae5138efc1c443ae6643a6a77d92a0e33e382d6cbb7758f9ab25ab0f97504554d1904620a41fed463796fc2'),
+(14, 1, 'marcos', 'marcos@gmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79'),
+(15, 1, 'admin', 'admin@admin.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vistos`
+--
+
+CREATE TABLE `vistos` (
+  `idReg` int(11) NOT NULL,
+  `idPelicula` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `vistos`
+--
+
+INSERT INTO `vistos` (`idReg`, `idPelicula`, `idUsuario`) VALUES
+(1, 640146, 14),
+(2, 713704, 14),
+(3, 605886, 14),
+(4, 447365, 14),
+(5, 594767, 14),
+(6, 620705, 14),
+(7, 315162, 14),
+(8, 569094, 14),
+(9, 447365, 14),
+(10, 502356, 7),
+(11, 603692, 7),
+(12, 385687, 7),
+(13, 713704, 7),
+(14, 447365, 7),
+(15, 605886, 7),
+(16, 882569, 7);
 
 --
 -- Índices para tablas volcadas
@@ -60,6 +93,13 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `vistos`
+--
+ALTER TABLE `vistos`
+  ADD PRIMARY KEY (`idReg`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -67,7 +107,23 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `vistos`
+--
+ALTER TABLE `vistos`
+  MODIFY `idReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `vistos`
+--
+ALTER TABLE `vistos`
+  ADD CONSTRAINT `vistos_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
