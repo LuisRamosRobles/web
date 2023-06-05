@@ -35,24 +35,19 @@ function comprobarSesion(){
 const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
 
 function cargarPeliculas() {
-  // Realizar una solicitud al archivo PHP para obtener los IDs de película
   fetch('../php/listaVistos.php')
     .then(response => response.json())
     .then(ids => {
       if (ids.length === 0) {
-        // La lista de IDs está vacía, realizar alguna acción o mostrar un mensaje
         console.log('No se encontraron películas para el usuario.');
       } else {
-        // Realizar solicitudes a la API de TMDb para obtener los detalles de cada película por su ID
         const promises = ids.map(id =>
           fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=es`)
             .then(response => response.json())
         );
 
-        // Esperar a que se completen todas las solicitudes a la API
         Promise.all(promises)
           .then(movies => {
-            // Crear los elementos HTML de las películas
             createMovieElements(movies);
           })
           .catch(error => console.log(error));
@@ -61,7 +56,6 @@ function cargarPeliculas() {
     .catch(error => console.log(error));
 }
 
-// Función para crear los elementos HTML de las películas
 function createMovieElements(movies) {
   let movieList = document.getElementById('listaVistos');
   let tituloTrailers = document.getElementById('titulo');
@@ -86,12 +80,12 @@ function createMovieElements(movies) {
     title.textContent = movie.title;
 
     let link = document.createElement('a');
-    link.href = `./html/movie.html?id=${movie.id}`; // Agregar el ID de la película como parámetro en la URL
+    link.href = `./html/movie.html?id=${movie.id}`;
 
     overlay.appendChild(title);
     movieDiv.appendChild(image);
     movieDiv.appendChild(overlay);
-    link.appendChild(movieDiv); // Envolver el div de la película con el enlace
+    link.appendChild(movieDiv);
     movieList.appendChild(link);
   });
 }
