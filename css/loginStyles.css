@@ -137,7 +137,7 @@ form .boton {
     font-size: 20px;
     margin-bottom: 15px;
     border-radius: 5px;
-    transition-duration: .3s; 
+    transition-duration: .3s;
 }
 
 form .boton:hover {
@@ -154,3 +154,16 @@ form .boton:hover {
     display: block;
 }
 
+.contact {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.contact a {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.contact a:hover {
+    color: #ab6928;
+}
