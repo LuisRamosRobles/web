@@ -22,7 +22,9 @@ function cargarPeliculas(){
   };
 
   let createMovieElements = (movies) => {
+
     let movieList = document.getElementById('movieList');
+    let loader = document.getElementById('loader');
 
     movies.forEach(movie => {
       let movieDiv = document.createElement('div');
@@ -47,6 +49,9 @@ function cargarPeliculas(){
       link.appendChild(movieDiv);
       movieList.appendChild(link);
     });
+
+    loader.style.display = 'none';
+    movieList.style.display = 'grid';
   };
 
   fetchMovies()
@@ -57,6 +62,11 @@ function cargarPeliculas(){
 function busquedaPeliculas(inputBusqueda){
 
   let busqueda = inputBusqueda.value
+  let movieList = document.getElementById('movieList');
+  let loader = document.getElementById('loader');
+
+  movieList.style.display = 'none';
+  loader.style.display = 'block';
 
   if(busqueda != ""){
     let moviesContainer = document.getElementById('movieList');
@@ -112,6 +122,9 @@ function busquedaPeliculas(inputBusqueda){
         link.appendChild(movieDiv);
         movieList.appendChild(link);
       });
+
+      loader.style.display = 'none';
+      movieList.style.display = 'grid';
     };
   
     fetchMovies()
