@@ -80,7 +80,7 @@ function createMovieElements(movies) {
     title.textContent = movie.title;
 
     let link = document.createElement('a');
-    link.href = `./html/movie.html?id=${movie.id}`;
+    link.href = `./movie.html?id=${movie.id}`;
 
     overlay.appendChild(title);
     movieDiv.appendChild(image);
