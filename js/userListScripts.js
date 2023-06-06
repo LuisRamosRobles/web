@@ -94,11 +94,12 @@ function cargarListado(){
         })
         .then(response => response.json())
         .then(data => {
-            // Manejar la respuesta de eliminación si es necesario
-            console.log('Usuario eliminado:', data);
+            if(data.message.localeCompare("Error al eliminar el usuario:")){
+                window.location.href = './errorAdmin.html'
+            }
         })
         .catch(error => {
-            console.error('Error:', error);
+            window.location.href = './errorAdmin.html'
         });
         }
 
