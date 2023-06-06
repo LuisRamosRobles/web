@@ -8,10 +8,8 @@ function validarNombre(input) {
     }
 }
     function validarTlfn(input) {
-    // Remueve todos los caracteres que no sean números
     input.value = input.value.replace(/\D/g, '');
 
-    // Limita la longitud del valor a 9 caracteres
     if (input.value.length < 9) {
         input.setCustomValidity('Ingrese el numero completo de 9 digito.');
     } else {
