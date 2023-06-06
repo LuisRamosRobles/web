@@ -8,7 +8,7 @@ function validarNombre(input) {
     }
 }
     function validarTlfn(input) {
-    // Remueve todos los caracteres que no sean nÃºmeros
+    // Remueve todos los caracteres que no sean números
     input.value = input.value.replace(/\D/g, '');
 
     // Limita la longitud del valor a 9 caracteres
