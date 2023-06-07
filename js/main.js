@@ -26,6 +26,4 @@ button.addEventListener('click', (e) => {
         username: username.value,
         password: password.value
     }
-
-    console.log(data)
 })
