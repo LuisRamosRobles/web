@@ -64,7 +64,6 @@ function comprobarSesion(){
         let response = xhr.responseText.trim();
         if (response === "true") {
           buscarTrailer();
-          registrarVisto();
         } else {
           window.location.href = "../html/logreg.html";
         }
@@ -88,6 +87,7 @@ function buscarTrailer(){
 
         if (trailer) {
           mensajeError.style.visibility = 'hidden';
+          registrarVisto();
           window.open(`https://www.youtube.com/watch?v=${trailer.key}`);
         } else {
           mensajeError.style.visibility = 'visible';

@@ -45,7 +45,7 @@
     if($ejecutar){
         echo'
             <script>
-                window.location = "../html/logcorrecto.html"
+                window.location = "../html/regCorrecto.html"
             </script>        
         ';
     } else {

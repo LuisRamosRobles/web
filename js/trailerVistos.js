@@ -86,7 +86,7 @@ function createMovieElements(movies) {
     title.textContent = movie.title;
 
     let link = document.createElement('a');
-    link.href = `./html/movie.html?id=${movie.id}`; // Agregar el ID de la película como parámetro en la URL
+    link.href = `./movie.html?id=${movie.id}`; // Agregar el ID de la película como parámetro en la URL
 
     overlay.appendChild(title);
     movieDiv.appendChild(image);
