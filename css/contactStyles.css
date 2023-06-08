@@ -26,7 +26,7 @@ body {
     background-image: url('../images/fondoContact.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(5px); /* Ajusta el valor según el grado de desenfoque deseado */
+    filter: blur(5px);
 }
 
 header {

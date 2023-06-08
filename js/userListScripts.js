@@ -16,12 +16,16 @@ function comprobarAdmin(){
 
 function cargarListado(){
 
+    // Hacer la solicitud al archivo PHP
     fetch('../php/listadoUsuarios.php')
-    .then(response => response.json())
+    .then(response => response.json()) // Convertir la respuesta a JSON
     .then(data => {
+    // Manejar los datos recibidos
     if (data.length > 0) {
+        // Obtener el contenedor del listado de usuarios
         const userList = document.getElementById('user-list');
 
+        // Crear los registros de usuarios
         data.forEach(user => {
             const userDiv = document.createElement('div');
             userDiv.classList.add('user');
@@ -60,8 +64,9 @@ function cargarListado(){
             deleteButton.addEventListener('click', () => {
                 const confirmar = confirm('¿Estás seguro de que deseas eliminar este usuario?');
                 if (confirmar) {
-                    deleteUser(user.id);
-                    userList.removeChild(userDiv);
+                    // Eliminar el usuario del listado y de la base de datos
+                    deleteUser(user.id); // Llamada a la función para eliminar el usuario
+                    userList.removeChild(userDiv); // Eliminar el elemento del DOM
                 }
             });
 
@@ -77,7 +82,9 @@ function cargarListado(){
         console.error('Error:', error);
         });
 
+        // Función para eliminar el usuario del listado y de la base de datos
         function deleteUser(userId) {
+        // Realizar una solicitud al archivo PHP para eliminar el usuario de la base de datos
         fetch('../php/eliminarUsuario.php', {
             method: 'POST',
             headers: {
@@ -87,10 +94,12 @@ function cargarListado(){
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Usuario eliminado:', data);
+            if(data.message.localeCompare("Error al eliminar el usuario:")){
+                window.location.href = './errorAdmin.html'
+            }
         })
         .catch(error => {
-            console.error('Error:', error);
+            window.location.href = './errorAdmin.html'
         });
         }
 

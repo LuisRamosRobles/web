@@ -1,8 +1,9 @@
 const apiKey = '7d3a5003de5f2cc2c60ed0c40969a8e5';
-const maxMovies = 70;
-const moviesPerPage = 20;
+const maxMovies = 70; // Número máximo de películas que deseas obtener
+const moviesPerPage = 20; // Número de películas por página (20 es el valor máximo permitido por la API)
 
 function cargarPeliculas(){
+  // Realizar una petición GET a la API de TMDb para obtener todas las películas populares y estrenadas en español
   let fetchMovies = async () => {
     let allMovies = [];
     let totalPages = Math.ceil(maxMovies / moviesPerPage);
@@ -13,6 +14,7 @@ function cargarPeliculas(){
       let movies = data.results;
       allMovies = [...allMovies, ...movies];
 
+      // Si se han obtenido menos películas que el número máximo deseado, ajusta el número total de páginas
       if (movies.length < moviesPerPage) {
         totalPages = Math.ceil(allMovies.length / moviesPerPage);
       }
@@ -21,10 +23,9 @@ function cargarPeliculas(){
     return allMovies.slice(0, maxMovies);
   };
 
+// Función para crear los elementos HTML de las películas
   let createMovieElements = (movies) => {
-
     let movieList = document.getElementById('movieList');
-    let loader = document.getElementById('loader');
 
     movies.forEach(movie => {
       let movieDiv = document.createElement('div');
@@ -41,19 +42,17 @@ function cargarPeliculas(){
       title.textContent = movie.title;
 
       let link = document.createElement('a');
-      link.href = `./html/movie.html?id=${movie.id}`;
+      link.href = `./html/movie.html?id=${movie.id}`; // Agregar el ID de la película como parámetro en la URL
 
       overlay.appendChild(title);
       movieDiv.appendChild(image);
       movieDiv.appendChild(overlay);
-      link.appendChild(movieDiv);
+      link.appendChild(movieDiv); // Envolver el div de la película con el enlace
       movieList.appendChild(link);
     });
-
-    loader.style.display = 'none';
-    movieList.style.display = 'grid';
   };
 
+  // Obtener y mostrar las películas
   fetchMovies()
     .then(movies => createMovieElements(movies))
     .catch(error => console.log(error));
@@ -62,11 +61,6 @@ function cargarPeliculas(){
 function busquedaPeliculas(inputBusqueda){
 
   let busqueda = inputBusqueda.value
-  let movieList = document.getElementById('movieList');
-  let loader = document.getElementById('loader');
-
-  movieList.style.display = 'none';
-  loader.style.display = 'block';
 
   if(busqueda != ""){
     let moviesContainer = document.getElementById('movieList');
@@ -122,9 +116,6 @@ function busquedaPeliculas(inputBusqueda){
         link.appendChild(movieDiv);
         movieList.appendChild(link);
       });
-
-      loader.style.display = 'none';
-      movieList.style.display = 'grid';
     };
   
     fetchMovies()
