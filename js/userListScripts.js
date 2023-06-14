@@ -79,7 +79,7 @@ function cargarListado(){
         }
         })
         .catch(error => {
-        console.error('Error:', error);
+            //Aqui manejamos los errores si es necesario
         });
 
         // Función para eliminar el usuario del listado y de la base de datos
@@ -94,12 +94,10 @@ function cargarListado(){
         })
         .then(response => response.json())
         .then(data => {
-            if(data.message.localeCompare("Error al eliminar el usuario:")){
-                window.location.href = './errorAdmin.html'
-            }
+            //Aqui manejamos los datos si es necesario
         })
         .catch(error => {
-            window.location.href = './errorAdmin.html'
+            //Aqui manejamos los errores si es necesario
         });
         }
 
