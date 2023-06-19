@@ -40,7 +40,6 @@
         exit;
     }
 
-
     $ejecutar = mysqli_query($conexion, $query);
 
     if($ejecutar){
